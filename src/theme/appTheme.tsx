@@ -20,5 +20,10 @@ export const styles = StyleSheet.create({
         color:"white",
         fontWeight:"bold",
         fontSize:18
+    },
+    avatar:{
+        width:50,
+        height:150,
+        borderRadius:100
     }
 });
