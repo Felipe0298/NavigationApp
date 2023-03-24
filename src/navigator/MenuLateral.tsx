@@ -4,8 +4,9 @@ import { createDrawerNavigator, DrawerContentComponentProps, DrawerContentScroll
 import { StackNavigator } from './StackNavigator';
 import { SettingsScreen } from '../screens/SettingsScreen';
 import { useWindowDimensions, Text, View } from 'react-native';
-import { Image } from 'react-native/Libraries/Image/Image';
 import { styles } from '../theme/appTheme';
+import { Image } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const Drawer = createDrawerNavigator();
 
@@ -19,20 +20,37 @@ export const MenuLateral =() => {
     screenOptions={{drawerType:width >=768 ? "permanent" : "front"}}
     drawerContent={(props) => <MenuInterno {...props}/>}
     >
-      <Drawer.Screen name="Home" component={StackNavigator} />
-      <Drawer.Screen name="Settings" component={SettingsScreen} />
+      <Drawer.Screen name="StackNavigator" component={StackNavigator}  />
+      <Drawer.Screen name="SettingsScreen" component={SettingsScreen} />
     </Drawer.Navigator>
   );
 }
 
-const MenuInterno = ( props: DrawerContentComponentProps) =>{
+const MenuInterno = ( {navigation}: DrawerContentComponentProps) =>{
   return (
     <DrawerContentScrollView>
-      <View>
-      <Image source={{
-          uri:"https://thumbs.dreamstime.com/b/omita-al-avatar-placeholder-de-la-foto-icono-del-perfil-124557887.jpg"
-        }}
-        style={styles.avatar}/>
+
+      {/* Parte del avatar */}
+      <View style={styles.avatarContainer}>
+      <Image 
+      source={{
+        uri:"https://thumbs.dreamstime.com/b/default-avatar-profile-image-vector-social-media-user-icon-potrait-182347582.jpg"
+      }}
+      style={styles.avatar}
+      />
+      </View>
+
+      {/* Opciones del menu */}
+      <View style={styles.menuContainer}>
+        <TouchableOpacity style={styles.menuBoton} 
+        onPress={()=> navigation.navigate("StackNavigator")}>
+          <Text style={styles.menuTexto}>Navegacion</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.menuBoton}
+        onPress={()=> navigation.navigate("SettingsScreen")}>
+          <Text style={styles.menuTexto}>Ajustes</Text>
+        </TouchableOpacity>
       </View>
 
     </DrawerContentScrollView>

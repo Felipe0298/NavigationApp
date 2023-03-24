@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
         marginHorizontal:20
     },
     title:{
-        fontSize:50
+        fontSize:50,
     },
     botonGrande:{
         width:100,
@@ -22,8 +22,21 @@ export const styles = StyleSheet.create({
         fontSize:18
     },
     avatar:{
-        width:50,
+        width:150,
         height:150,
-        borderRadius:100
+        borderRadius:10
+    },
+    avatarContainer:{
+        alignItems:"center",
+    },
+    menuContainer:{
+        marginVertical:30,
+        alignItems:"center",
+    },
+    menuTexto:{
+        fontSize:20
+    },
+    menuBoton:{
+        marginVertical:10
     }
 });
