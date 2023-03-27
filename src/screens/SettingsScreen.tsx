@@ -5,7 +5,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 export const SettingsScreen = () => {
     return (
         <SafeAreaView>
-            <Text>SettingsScreen</Text>
+            <Text>SettingsScreen777</Text>
         </SafeAreaView>
     );
 }

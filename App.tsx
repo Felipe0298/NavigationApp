@@ -6,13 +6,15 @@ import { StackNavigator } from './src/navigator/StackNavigator';
 import { MenuLateralBasico } from './src/navigator/MenuLateralBasico';
 import { MenuLateral } from './src/navigator/MenuLateral';
 import { styles } from './src/theme/appTheme';
+import { Tabs } from './src/navigator/Tabs';
 
 const App = () => {
   return (
     <NavigationContainer>
       {/* <StackNavigator/> */}
       {/* <MenuLateralBasico/> */}
-      <MenuLateral/>
+       <MenuLateral/> 
+      {/* <Tabs/> */}
     </NavigationContainer>
   );
 }
