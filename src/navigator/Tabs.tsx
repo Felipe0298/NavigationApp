@@ -6,6 +6,7 @@ import { Tab3Screen } from '../screens/Tab3Screen';
 
 const Tab = createBottomTabNavigator();
 
+/* El commit de la seccion 121 es realmente el commit de la 122 */
 export const Tabs =() => {
   return (
     <Tab.Navigator>
