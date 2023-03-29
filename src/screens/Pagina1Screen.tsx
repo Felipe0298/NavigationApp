@@ -1,9 +1,10 @@
 import { StackScreenProps } from '@react-navigation/stack/lib/typescript/src/types';
 import React from 'react';
 import { Button, Text, View } from 'react-native';
-import { styles } from '../theme/appTheme';
+import { styles, colores } from '../theme/appTheme';
 import { useNavigation } from '@react-navigation/core';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 interface Props extends StackScreenProps<any, any> { }
 
@@ -24,7 +25,7 @@ export const Pagina1Screen = ({ navigation }: Props) => {
                     nombre: "Pepa",
                     equipo: "Boca"
                 })}>
-                    <Text style={styles.botonGrandeTexto}>Pepa</Text>
+                    <Text style={styles.botonGrandeTexto}><Icon name="person-sharp" size={25} color={"white"} />Pepa</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={{...styles.botonGrande, backgroundColor:"#FF9427"}} onPress={() => navigation.navigate("PersonaScreen", {
@@ -32,7 +33,7 @@ export const Pagina1Screen = ({ navigation }: Props) => {
                     nombre: "Juanfo",
                     equipo: "Boca"
                 })}>
-                    <Text style={styles.botonGrandeTexto}>Juanfo</Text>
+                    <Text style={styles.botonGrandeTexto}><Icon name="person-sharp" size={25} color={"white"} />Juanfo</Text>
                 </TouchableOpacity>
 
             </View>

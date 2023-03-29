@@ -7,6 +7,7 @@ import { styles, colores } from '../theme/appTheme';
 import { Platform, Text } from 'react-native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { TopTabNavigator } from './TopTabNavigator';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 
 
@@ -36,23 +37,23 @@ const TabsAndroid = () => {
         tabBarIcon:({color, focused}) =>{
           
           let iconName: string ="";
-          switch (route.name) {
-            case "Tab1Screen":
-              iconName = "T1"
-              
-              break;
-              case "Tab2Screen":
-                iconName = "T2"
+            switch (route.name) {
+              case "Tab1Screen":
+                iconName = "chatbox-ellipses-outline"
                 
                 break;
-                case "StackNavigator":
-              iconName = "ST"
-              break;
-
-            }
-            return <Text style={{color}}>{iconName}</Text>
-        }
-      })
+                case "Tab2Screen":
+                  iconName = "people-outline"          
+                  break;
+                  case "StackNavigator":
+                    iconName = "albums-outline"        
+                  
+                  break;
+  
+              }
+              return <Icon name={iconName} size={25} color={color} />
+          }
+    })
     }
     
     >
@@ -96,11 +97,12 @@ const TabsIOS = () => {
                   
                   break;
                   case "StackNavigator":
-                iconName = "ST"
+                iconName = "people-sharp"
                 break;
 
               }
-              return <Text style={{color}}>{iconName}</Text>
+              return <Icon name={iconName} size={25} color={color} />
+
           }
         })
       }
