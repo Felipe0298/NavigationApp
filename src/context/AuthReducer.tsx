@@ -10,7 +10,7 @@ export const authReducer = (state: AuthState, action:AuthAction): AuthState =>{
             return{
                 ...state,
                 isLoggedIn:true,
-                username:"no-username-yet"
+                username:"no-username-yet",
                  
             }
             break;
