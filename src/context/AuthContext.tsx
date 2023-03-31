@@ -1,6 +1,7 @@
 //Definir que informacion tendra el context
 
-import React,{ createContext } from "react";
+import React,{ createContext, useReducer } from "react";
+import { authReducer } from "./AuthReducer";
 
 export interface AuthState{
     ifLoggedIn: boolean;
@@ -28,9 +29,12 @@ export const AuthContext = createContext({} as AuthContextProps)
 
 //Componente proveedor del estado
 export const AuthProvider =({children}:any) =>{
+
+    const [authState, dispatch] = useReducer( authReducer , authInitialState)
+
     return(
         <AuthContext.Provider value={{
-            authState:authInitialState,
+            authState,
             signIn:()=> {}
         }}>
             {children}
