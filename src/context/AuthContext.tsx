@@ -4,14 +4,14 @@ import React,{ createContext, useReducer } from "react";
 import { authReducer } from "./AuthReducer";
 
 export interface AuthState{
-    ifLoggedIn: boolean;
+    isLoggedIn: boolean;
     username?: string;
     favotireIcon?: string
 }
 
 //Estado inicial
 export const authInitialState: AuthState ={
-    ifLoggedIn: false,
+    isLoggedIn: false,
     username: undefined,
     favotireIcon: undefined
 }
@@ -32,10 +32,15 @@ export const AuthProvider =({children}:any) =>{
 
     const [authState, dispatch] = useReducer( authReducer , authInitialState)
 
+    const signIn = () =>{
+        dispatch({type:"signIn"})
+    }
+
+
     return(
         <AuthContext.Provider value={{
             authState,
-            signIn:()=> {}
+            signIn
         }}>
             {children}
         </AuthContext.Provider>
