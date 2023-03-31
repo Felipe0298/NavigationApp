@@ -4,6 +4,7 @@ import { styles } from '../theme/appTheme';
 import { Button } from 'react-native';
 import { AuthContext, AuthState } from '../context/AuthContext';
 
+
 export const ContactsScreen = () => {
 
     const {signIn, authState} = useContext(AuthContext)

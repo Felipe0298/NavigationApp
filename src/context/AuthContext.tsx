@@ -20,7 +20,8 @@ export const authInitialState: AuthState ={
 //Lo usaremos para decirle a React como luce y que expone el context
 export interface AuthContextProps{
     authState: AuthState;
-    signIn: ()=> void
+    signIn: ()=> void,
+    changeFavoriteIcon: (name: string) => void;
 }
 
 
@@ -36,11 +37,15 @@ export const AuthProvider =({children}:any) =>{
         dispatch({type:"signIn"})
     }
 
+    const changeFavoriteIcon= (iconName: string) =>{
+        dispatch({type:"changeFavIcon", payload: iconName})
+    }
 
     return(
         <AuthContext.Provider value={{
             authState,
-            signIn
+            signIn,
+            changeFavoriteIcon
         }}>
             {children}
         </AuthContext.Provider>
