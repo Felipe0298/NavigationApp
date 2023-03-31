@@ -10,7 +10,9 @@ export interface AuthState{
 
 //Estado inicial
 export const authInitialState: AuthState ={
-    ifLoggedIn: false
+    ifLoggedIn: false,
+    username: undefined,
+    favotireIcon: undefined
 }
 
 
