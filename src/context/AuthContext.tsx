@@ -6,14 +6,14 @@ import { authReducer } from "./AuthReducer";
 export interface AuthState{
     isLoggedIn: boolean;
     username?: string;
-    favotireIcon?: string
+    favotireIcon?: string;
 }
 
 //Estado inicial
 export const authInitialState: AuthState ={
     isLoggedIn: false,
     username: undefined,
-    favotireIcon: undefined
+    favotireIcon: undefined,
 }
 
 
@@ -22,6 +22,7 @@ export interface AuthContextProps{
     authState: AuthState;
     signIn: ()=> void,
     changeFavoriteIcon: (name: string) => void;
+    logout: () => void;
 }
 
 
@@ -41,11 +42,16 @@ export const AuthProvider =({children}:any) =>{
         dispatch({type:"changeFavIcon", payload: iconName})
     }
 
+    const logout = () =>{
+        dispatch({type:"logout"})
+    }
+
     return(
         <AuthContext.Provider value={{
             authState,
             signIn,
-            changeFavoriteIcon
+            changeFavoriteIcon,
+            logout
         }}>
             {children}
         </AuthContext.Provider>
